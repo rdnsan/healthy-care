@@ -1,0 +1,189 @@
+@import "variables";
+@import "mixins";
+
+hc-hero {
+	@include flexbox(flex, row, space-between, center);
+	padding: 0 10vw;
+	height: 100vh;
+	
+	.hc-hero_text {
+		h2 {
+			font-size: 5vw;
+			margin: 0 !important;
+
+			span {
+				font-size: 3vw;
+				color: $secondary-color;
+			}
+		}
+		
+		p {
+			font-size: 20px;
+			line-height: 30px;
+			margin: 6px !important;
+			opacity: 0.5;
+		}
+		
+		.btn {
+			display: inline-block;
+			padding: 1rem 2rem;
+			margin-top: 15px;
+    	font-size: 1rem;
+    	font-weight: 700;
+    	background: linear-gradient(115deg, $blue 0%, $primary-color 100%);
+    	color: #fff;
+    	border-radius: 9999px;
+    	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    	transition-duration: 300ms;
+    	text-transform: uppercase;
+    	letter-spacing: 0.05em;
+    	--transform-translate-x: 0;
+    	--transform-translate-y: 0;
+    	--transform-rotate: 0;
+    	--transform-skew-x: 0;
+    	--transform-skew-y: 0;
+    	--transform-scale-x: 1;
+    	--transform-scale-y: 1;
+    	transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+
+			&:hover {
+				box-shadow: rgb(0 0 0 / 10%) 0px 20px 25px -5px, rgb(0 0 0 / 4%) 0px 10px 10px -5px;
+			}
+
+			&:focus {
+				outline: none;
+				box-shadow: rgb(66 153 225 / 50%) 0px 0px 0px 3px;
+			}
+
+			&:hover, &:focus {
+				--transform-translate-x: 1px;
+		    --transform-translate-y: -1px;
+			}
+		}
+	}
+	
+	.hc-hero_image img {
+		width: 38vw;
+		margin-top: -38px;
+	}
+}
+
+
+@media (max-width: 500px) {
+	hc-hero {
+		@include flexbox(flex, column-reverse, center, center);
+		height: 710px;
+		text-align: center;
+		
+		.hc-hero_text {
+			h2 {
+				font-size: 7vw;
+				margin: 0 !important;
+				
+				span {
+					font-size: 5vw !important;
+				}
+			}
+			
+			p {
+				font-size: 16px;
+			}
+			
+			.btn {
+				margin: 15px auto;
+				padding: 0.8rem 1.5rem;
+				font-size: 4vw;
+			}
+		}
+		
+		.hc-hero_image {
+			img {
+				width: 65vw;
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
+
+@media (max-width: 320px) {
+	hc-hero {
+		height: 700px;
+		
+		.hc-hero_image {
+			img {
+				margin-top: -95px;
+			}
+		}
+	}
+}
+
+@media (min-width: 321px) and (max-width: 375px) {
+	hc-hero {
+		.hc-hero_image {
+			img {
+				width: 65vw;
+				margin-top: -70px !important;
+			}
+		}
+	}
+}
+
+@media (min-width: 501px) and (max-width:768px) {
+	hc-hero {
+		@include flexbox(flex, column-reverse, center, center);
+		height: 890px;
+		text-align: center;
+		margin-bottom: 10rem;
+
+		.hc-hero_text {
+			h2 {
+				font-size: 7vw;
+				margin: 0 !important;
+
+				span {
+					font-size: 5vw !important;
+				}
+			}
+
+			p {
+				font-size: 1.4rem;
+			}
+
+			.btn {
+				margin: 15px auto;
+				font-size: 2.5vw;
+			}
+		}
+
+		.hc-hero_image {
+			img {
+				width: 55vw;
+				margin-top: -75px;
+			}
+		}
+	}
+}
+
+@media (min-width: 860px) and (max-width: 1024px) {
+	hc-hero {
+    height: 85vh;
+    padding: 0 5vw;
+
+		.hc-hero_text {
+			p {
+				font-size: 18px;
+			}
+
+			.btn {
+				font-size: 1.5vw;
+				padding: 12px 26px;
+			}
+		}
+
+		.hc-hero_image {
+			img {
+        margin-top: -100px;
+    	}
+		}
+  }
+}

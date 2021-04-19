@@ -1,0 +1,168 @@
+@import "variables";
+@import "mixins";
+
+hc-info {
+	height: 800px;
+	
+	.info-header {
+		text-align: center;
+		margin-bottom: 40px;
+		
+		h2 {
+			font-size: 2em;
+			
+			span {
+				color: $secondary-color;
+			}
+		}
+	}
+
+	.info-cards {
+		@include flexbox(flex, row, space-around, center);
+		padding: 40px 0;
+		
+		.card {
+			position: relative;
+			width: 350px;
+			height: 360px;
+			background: #fff;
+			box-shadow: 0 10px 22px rgba(0,0,0,0.09), 0 10px 10px rgba(0,0,0,0.09);
+			
+			.card-bg-one {
+				height: 150px;
+				background-color: $yellow;
+			}
+			
+			.card-bg-two {
+				height: 150px;
+				background-color: $light-blue;
+			}
+
+			.card-bg-one,
+			.card-bg-two {
+				float: left;
+			}
+
+			.card-content {
+				padding: 0 20px;
+				margin-top: 50%;
+				
+				h3 {
+					font-weight: 600;
+					font-size: 1.5em;
+				}
+				
+				p {
+					line-height: 30px;
+					opacity: 0.6;
+				}
+			}
+		}
+		
+		.one {
+			.card-one-img {
+				width: 180px;
+				position: absolute;
+				top: -50px;
+				right: -50px;
+			}
+		}
+
+		.two {
+			.card-two-img {
+				width: 158px;
+				position: absolute;
+				top: -50px;
+				right: -50px;
+			}
+		}
+		
+		.three {
+			.card-three-img {
+				width: 200px;
+				position: absolute;
+				top: -50px;
+				right: -50px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	hc-info {
+		height: auto;
+		
+		.info-header {
+			text-align: center;
+			margin: 40px 0;
+			font-size: 2.8vw;
+		}
+
+		.info-cards {
+			@include flexbox(flex, column, center, center);
+			padding: 50px;
+			text-align: center;
+			
+			.card {
+				margin-bottom: 60px;
+			}
+		}
+	}
+}
+
+@media (min-width: 501px) and (max-width:768px) {
+	hc-info {
+		height: auto;
+		
+		.info-header {
+			text-align: center;
+			margin: 40px 0;
+			font-size: 2.4vw;
+		
+		}
+		.info-cards {
+			@include flexbox(flex, column, center, center);
+			padding: 50px;
+			text-align: center;
+			
+			.card {
+				margin-bottom: 70px;
+			}
+		}
+	}
+}
+
+@media (min-width: 860px) and (max-width: 1024px) {
+	hc-info{
+		.info-cards {
+			.card {
+				width: 300px;
+				
+				.card-content {
+					h2 {
+						font-size: 2vw;
+						padding-top: 10px;
+					}
+				}
+			}
+			
+			.one {
+				.card-one-img {
+				right: -30px;
+				}
+			}
+
+			.two {
+				.card-two-img {
+					right: -33px;
+				}
+			}
+
+			.three {
+				.card-three-img {
+					right: -30px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,155 @@
+@import "mixins";
+@import "variables";
+
+.about {
+	@include flexbox(flex, row, space-evenly, center);
+	height: 600px;
+	padding: 50px;
+
+	.about-text {
+		position: relative;
+		padding: 0 50px;
+		height: inherit;
+		
+		h2 {
+			position: relative;
+			left: 150px;
+			font-size: 2em;
+
+			span {
+				color: #299ac1;
+				font-size: 2vw;
+			}
+		}
+		
+		img {
+			position: absolute;
+			top: 50px;
+			width: 9vw;
+		}
+	}
+
+	.about-list {
+		width: 50%;
+
+		ol {
+			list-style: none;
+			color: $secondary-color;
+
+			li {
+				position: relative;
+				font-size: 34px;
+				margin-bottom: 20px;
+				border-bottom: 1px solid #ebebeb;
+
+				span {
+					position: absolute;
+					line-height: 25px;
+					font-weight: 600;
+				}
+
+				p {
+					font-size: 16px;
+					color: #000;
+					padding-left: 60px;
+					line-height: 30px;
+					opacity: 0.6;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.about {
+		@include flexbox(flex, column, center, center);
+		height: auto;
+		padding: 0;
+
+		.about-text {
+			padding: 0 50px;
+			height: 100px;
+			
+			h2 {
+				left: 40px;
+				font-size: 6vw;
+
+				span {
+					font-size: 5vw !important;
+				}
+			}
+
+			img {
+				width: 16vw;
+				top: 10px;
+				left: -15px;
+			}
+		}
+
+		.about-list {
+			width: 75%;
+
+			.ol {
+				li {
+					font-size: 26px;
+
+					p {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 501px) and (max-width:768px) {
+	.about {
+		@include flexbox(flex, column, center, center);
+		height: auto;
+		padding: 0;
+		
+		.about-text {
+			padding: 0 80px;
+			height: 140px;
+			
+			h2 {
+				left: 0px;
+				font-size: 5vw;
+				
+				span {
+					font-size: 4vw !important;
+				}
+			}
+
+			img {
+				width: 16vw;
+				top: 10px;
+				left: -90px;
+			}
+		}
+
+		.about-list {
+			width: 65%;
+			
+			.ol {
+				li {
+					font-size: 26px;
+					
+					p {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 860px) and (max-width: 1024px) {
+	.about {
+		.about-text {
+			h2 {
+				left: 90px;
+			}
+		}
+	}
+}
